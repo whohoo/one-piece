@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>航海王-梦想护航</title>
+	<meta name="description" content="航海王">
+	<meta name="keywords" content="航海王,one piece,海贼王">
+	<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="HandheldFriendly" content="True">
+
+
+	<link href="./css/common.css" rel="stylesheet">
+	<link href="./css/main.css" rel="stylesheet">
+	<link href="./css/responsive.css" rel="stylesheet">
+
+	<script src="./js/jquery-2.1.1.min.js"></script>
+	<script src="./js/jquery.velocity.min.js"></script>
+	<script src="./js/jquery.transit.min.js"></script>
+	<script src="./js/preloadjs-0.4.1.min.js"></script>
+	<script src="./js/hammer.min.js"></script>
+	<script src="./js/assets.min.js"></script>
+</head>
+<body>
+	<div class="main">
+		<!-- 启动页 -->
+		<div class="intro page abs" style="">
+			<div class="intro-bg-fade abs">
+				<div class="logo abs">
+					<div class="loading abs">LOADING...</div>
+				</div>
+
+			</div>
+			<div class="intro-bg abs"></div>
+		</div>
+
+		<!--上传照片-->
+		<div class="main-ui page" style="display:none">
+			<div class="logo abs"></div>
+			<div class="enter-btn f0 abs" style="opacity:0;display:none">找出护航搭档</div>
+			<div class="bg page abs">
+				<div class="front-wave abs f0">前浪
+					<div class="group abs" style="opacity:0"></div>
+				</div>
+				<div class="back-wave abs f0">后浪</div>
+				<div class="cloud1 abs f0">云朵前景</div>
+				<div class="cloud2 abs f0">云朵后景</div>
+				<div class="lufei anim abs f0" style="display:none">路飞
+					<div class="slogan abs f0" style="opacity:0">谁和你在一起为梦想护航</div>
+				</div>
+			</div>
+			<!-- 预览窗口 -->
+			<div class="preview-box abs" style="display:none">
+				<div class="preview abs">
+					<div class="ui-area">
+						<input type="file" id="file" accept="image/*" class="abs" style="opacity:0;"/>
+						<div class="scan abs" style="display:none">
+							<div class="scan-1 abs"></div>
+							<div class="scan-2 abs"></div>
+						</div>
+						<div class="progress abs" style="display:none">
+							<div class="spin abs"></div>
+						</div>
+						<canvas id="result" width=190 height=182></canvas>
+						<div id="canvas-control" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"></div>
+					</div>
+					<div class="del-btn abs f0">删除</div>
+					<div class="next-btn abs f0">查看结果</div>
+				</div>
+			</div>
+			<!-- 结果页 -->
+			<div class="result-page abs" style="display:none">
+				<!--角色组-->
+				<ul class="avatar abs">
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="神秘" data-score="80" data-name="香克斯" data-color="163,30,30"   data-src="./img/avatar/0/avatar.png"><img width="156"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="腹黑" data-score="80" data-name="罗"     data-color="234,230,231" data-src="./img/avatar/1/avatar.png"><img width="150"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="豪迈" data-score="80" data-name="甚平"   data-color="64,125,187"  data-src="./img/avatar/2/avatar.png"><img width="163"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="高冷" data-score="80" data-name="汉库克" data-color="0,0,1"       data-src="./img/avatar/3/avatar.png"><img width="156"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="炎爆" data-score="80" data-name="艾斯"   data-color="222,80,46"   data-src="./img/avatar/4/avatar.png"><img width="149"></li>
+			    	<li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="耍酷" data-score="80" data-name="斯摩格" data-color="104,205,199" data-src="./img/avatar/5/avatar.png"><img width="149"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="花痴" data-score="80" data-name="山治"   data-color="248,218,98"  data-src="./img/avatar/6/avatar.png"><img width="151"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="呆萌" data-score="80" data-name="乔巴"   data-color="249,142,156" data-src="./img/avatar/7/avatar.png"><img width="151"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="发财" data-score="80" data-name="娜美"   data-color="234,145,60"  data-src="./img/avatar/8/avatar.png"><img width="152"></li>
+			        <li data-txt="梦想,我们不论大小; 美味,我们大小通吃!" data-p="吃货" data-score="80" data-name="路飞"   data-color="183,113,58"  data-src="./img/avatar/9/avatar.png"><img width="164"></li>
+			    </ul>
+			    <div class="slogan-2 abs">
+			    	<div class="name abs"></div>
+			    	<div class="skin abs"></div>
+			    </div>
+			    <div class="panel abs">
+			    	<div class="desc abs">梦想,我们不论大小;  美味,我们大小通吃!</div>
+					<div class="bar-1 bar abs">
+						<div class="bar-raw abs">
+							<p class="abs prop"></p>
+							<img width="43" src="" alt="">
+						</div>
+						<p class="score abs">80%</p>
+					</div>
+					<div class="bar-2 bar abs">
+						<div class="bar-raw abs">
+							<img width="83" src="./img/bar_2_skin.png" alt="">
+						</div>
+						<p class="score abs">80%</p>
+					</div>
+					<div class="share abs">
+						<div class="share-tips abs"></div>
+					</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="wechat">
+		<div class="tips abs"></div>
+	</div>
+	<script src="./js/main.js"></script>
+	<script>
+		var m = Main.init('user.php');
+	</script>
+</body>
+</html>

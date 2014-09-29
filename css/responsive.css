@@ -1,0 +1,30 @@
+
+/*Landscape*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) { 
+    .intro .upper .logo{
+		position: fixed;
+		top:0;
+		bottom: 0;
+		left:10%;
+		right: auto;
+		margin: auto;
+		-webkit-transform:scale3d(.6,.6,1);
+		z-index: 1;
+	}
+	.loader{
+		-webkit-transform:translate3d(0,0,0);
+	}
+	.intro .down .hander{
+		position: fixed;
+		top:0;
+		bottom: 0;
+		right:0;
+		margin: auto;
+		-webkit-transform-origin: right center;
+		-webkit-transform:scale3d(.6,.6,1);
+		z-index: 1;
+	}
+	.intro.leave .logo,.intro.leave .hander{
+		display: none;
+	}
+}
